@@ -6,37 +6,33 @@
   <title>Venu M — Home</title>
   <meta name="description" content="Venu M — Front-End Web Developer building clean, responsive, modern websites using HTML, CSS, and JavaScript." />
   <meta name="theme-color" content="#0ea5e9" />
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ["Inter","ui-sans-serif","system-ui","-apple-system","Segoe UI","Roboto","Noto Sans","Ubuntu","Cantarell","Helvetica Neue","Arial","sans-serif"],
+            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "sans-serif"],
           },
         },
       },
     };
   </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
     html { scroll-behavior: smooth; }
     .fade-in { animation: fadeIn 0.6s ease both; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     .nav-link { position: relative; }
     .nav-link.active { color: rgb(2 132 199); font-weight: 600; }
     .nav-link.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: rgb(56 189 248); border-radius: 2px; }
   </style>
 </head>
-
 <body class="font-sans text-slate-800 bg-slate-50">
-  <!-- Header -->
+
+  <!-- HEADER -->
   <header id="siteHeader" class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200 transition-shadow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
@@ -79,23 +75,19 @@
 
   <!-- HERO with Carousel -->
   <section id="home" class="relative overflow-hidden">
-    <!-- Put overlay behind and ignore touches -->
     <div class="absolute inset-0 z-0 bg-gradient-to-b from-sky-50 to-transparent pointer-events-none"></div>
 
-    <!-- Bring real content above -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
       <div class="grid lg:grid-cols-2 gap-10 items-center">
+        
         <!-- Left text -->
         <div class="fade-in relative z-10">
-          <span class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs text-sky-700">
-            Available for freelance work
-          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs text-sky-700">Available for freelance work</span>
           <h1 class="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">
             Hi, I’m <span class="text-sky-600">Venu</span> — Web Developer
           </h1>
           <p class="mt-4 text-slate-600 leading-relaxed">
-            I build clean, responsive, and fast websites using HTML, CSS, and JavaScript. I focus on modern UI,
-            accessibility, and simple, maintainable code.
+            I build clean, responsive, and fast websites using HTML, CSS, and JavaScript. I focus on modern UI, accessibility, and simple, maintainable code.
           </p>
           <div class="mt-6 flex flex-wrap items-center gap-3">
             <a href="projects.html" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-white font-medium shadow hover:bg-sky-700">View Projects</a>
@@ -107,8 +99,7 @@
         <!-- Right: Carousel -->
         <div class="relative z-10 fade-in">
           <div class="relative overflow-hidden rounded-3xl border border-slate-200 shadow-inner">
-            <!-- Slides wrapper -->
-            <div id="heroSlides" class="whitespace-nowrap transition-transform duration-500 ease-out"><!-- injected by JS --></div>
+            <div id="heroSlides" class="whitespace-nowrap transition-transform duration-500 ease-out"></div>
 
             <!-- Arrows -->
             <button id="prevBtn" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white shadow p-2 pointer-events-auto">&#10094;</button>
@@ -123,7 +114,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="border-t border-slate-200 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
       <p>© <span id="year"></span> Venu M. All rights reserved.</p>
@@ -135,43 +126,8 @@
     </div>
   </footer>
 
-  <!-- Combined Script: navbar + carousel -->
   <script>
-    // ===== NAVBAR + MOBILE MENU =====
-    const btn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const burger = document.getElementById('burger');
-    const closeI = document.getElementById('close');
-
-    btn?.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      burger.classList.toggle('hidden', !isHidden);
-      closeI.classList.toggle('hidden', isHidden);
-    });
-
-    // Close mobile menu when a link is tapped
-    mobileMenu?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        if (!mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          burger.classList.remove('hidden');
-          closeI.classList.add('hidden');
-        }
-      });
-    });
-
-    // Header shadow on scroll + year
-    const header = document.getElementById('siteHeader');
-    const addHeaderShadow = () => {
-      if (window.scrollY > 4) header.classList.add('shadow-sm');
-      else header.classList.remove('shadow-sm');
-    };
-    addHeaderShadow();
-    window.addEventListener('scroll', addHeaderShadow, { passive: true });
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ===== HERO CAROUSEL =====
+    // --- HERO CAROUSEL ---
     const images = [
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop",
@@ -179,7 +135,6 @@
       "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1504691342899-9d7eea6fc381?q=80&w=1200&auto=format&fit=crop"
     ];
-
     const slidesEl = document.getElementById('heroSlides');
     const dotsEl = document.getElementById('heroDots');
     const prevBtn = document.getElementById('prevBtn');
@@ -189,16 +144,17 @@
       slidesEl.innerHTML = images.map(src => `
         <div class="inline-block align-top w-full">
           <img src="${src}" alt="Portfolio slide" class="block w-full h-[320px] sm:h-[380px] md:h-[420px] object-cover select-none" loading="lazy"/>
-        </div>
-      `).join('');
+        </div>`).join('');
     }
+
     function renderDots() {
       dotsEl.innerHTML = images.map((_, i) => `
         <button class="h-2.5 w-2.5 rounded-full border border-white/70 bg-white/50 hover:bg-white ${i===0?'ring-2 ring-sky-300':''}" data-idx="${i}" aria-label="Go to slide ${i+1}"></button>
       `).join('');
     }
 
-    let idx = 0, timer = null;
+    let idx = 0;
+    let timer = null;
     const interval = 3500;
     const setTransform = () => {
       slidesEl.style.transform = `translateX(-${idx * 100}%)`;
@@ -207,10 +163,12 @@
         d.classList.toggle('ring-sky-300', i === idx);
       });
     };
-    function next(){ idx = (idx + 1) % images.length; setTransform(); }
-    function prev(){ idx = (idx - 1 + images.length) % images.length; setTransform(); }
-    function startAuto(){ stopAuto(); timer = setInterval(next, interval); }
-    function stopAuto(){ if (timer) clearInterval(timer); }
+
+    function next() { idx = (idx + 1) % images.length; setTransform(); }
+    function prev() { idx = (idx - 1 + images.length) % images.length; setTransform(); }
+
+    function startAuto() { stopAuto(); timer = setInterval(next, interval); }
+    function stopAuto() { if (timer) clearInterval(timer); }
 
     renderSlides(); renderDots(); setTransform(); startAuto();
     nextBtn.addEventListener('click', () => { next(); startAuto(); });
@@ -219,11 +177,9 @@
       const b = e.target.closest('button[data-idx]'); if (!b) return;
       idx = parseInt(b.dataset.idx, 10); setTransform(); startAuto();
     });
-
     slidesEl.parentElement.addEventListener('mouseenter', stopAuto);
     slidesEl.parentElement.addEventListener('mouseleave', startAuto);
 
-    // Touch swipe
     let startX = null;
     slidesEl.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
     slidesEl.addEventListener('touchmove', (e) => {
@@ -231,6 +187,29 @@
       const dx = e.touches[0].clientX - startX;
       if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); startX = null; startAuto(); }
     }, { passive: true });
+
+    // --- MOBILE MENU ---
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const burger = document.getElementById('burger');
+    const close = document.getElementById('close');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      burger.classList.toggle('hidden');
+      close.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        burger.classList.remove('hidden');
+        close.classList.add('hidden');
+      });
+    });
+
+    // --- YEAR ---
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
