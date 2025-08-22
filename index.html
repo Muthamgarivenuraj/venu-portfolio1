@@ -75,36 +75,52 @@
   </header>
 
 
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-sky-50 to-transparent"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-14">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div class="fade-in">
-          <span class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs text-sky-700">Available for freelance work</span>
-          <h1 class="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">Hi, I’m <span class="text-sky-600">Venu</span> — Web Developer</h1>
-          <p class="mt-4 text-slate-600 leading-relaxed">I build clean, responsive, and fast websites using HTML, CSS, and JavaScript. I focus on modern UI, accessibility, and simple, maintainable code.</p>
-          <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="projects.html" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-white font-medium shadow hover:bg-sky-700">View Projects</a>
-            <a href="contact.html" class="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-slate-300 hover:bg-slate-100">Contact Me</a>
-            <a href="Venu-CV.pdf" download class="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-sky-200 text-sky-700 bg-sky-50 hover:bg-sky-100">Download CV</a>
-          </div>
-        </div>
-        <div class="relative fade-in">
-          <div class="mx-auto max-w-sm">
-            <div class="aspect-square rounded-3xl bg-gradient-to-br from-sky-100 via-white to-slate-100 border border-slate-200 shadow-inner flex items-center justify-center">
-              <svg viewBox="0 0 200 200" class="w-3/4" aria-hidden="true">
-                <rect x="30" y="40" width="140" height="100" rx="10" ry="10" fill="#e2e8f0" stroke="#94a3b8"/>
-                <rect x="40" y="50" width="120" height="10" rx="2" fill="#94a3b8"/>
-                <rect x="40" y="70" width="80" height="10" rx="2" fill="#cbd5e1"/>
-                <rect x="40" y="90" width="100" height="10" rx="2" fill="#cbd5e1"/>
-                <rect x="40" y="110" width="60" height="10" rx="2" fill="#cbd5e1"/>
-              </svg>
-            </div>
-          </div>
+ <!-- HERO with Carousel -->
+<section id="home" class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-sky-50 to-transparent pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <!-- Left text -->
+      <div class="fade-in">
+        <span class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs text-sky-700">Available for freelance work</span>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">
+          Hi, I’m <span class="text-sky-600">Venu</span> — Web Developer
+        </h1>
+        <p class="mt-4 text-slate-600 leading-relaxed">
+          I build clean, responsive, and fast websites using HTML, CSS, and JavaScript. I focus on modern UI, accessibility, and simple, maintainable code.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="projects.html" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-white font-medium shadow hover:bg-sky-700">View Projects</a>
+          <a href="contact.html" class="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-slate-300 hover:bg-slate-100">Contact Me</a>
+          <a href="Venu-CV.pdf" download class="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-sky-200 text-sky-700 bg-sky-50 hover:bg-sky-100">Download CV</a>
         </div>
       </div>
+
+      <!-- Right: Carousel -->
+      <div class="relative fade-in">
+        <div class="relative overflow-hidden rounded-3xl border border-slate-200 shadow-inner">
+          <!-- Slides wrapper -->
+          <div id="heroSlides" class="whitespace-nowrap transition-transform duration-500 ease-out">
+            <!-- Slides are injected by JS -->
+          </div>
+
+          <!-- Arrows -->
+          <button id="prevBtn" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white shadow p-2">
+            &#10094;
+          </button>
+          <button id="nextBtn" aria-label="Next" class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 hover:bg-white shadow p-2">
+            &#10095;
+          </button>
+
+          <!-- Dots -->
+          <div id="heroDots" class="absolute bottom-3 inset-x-0 flex items-center justify-center gap-2"></div>
+        </div>
+        <p class="mt-2 text-xs text-slate-500 text-center">Swipe on mobile • Hover to pause</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
   <footer class="border-t border-slate-200 bg-white">
@@ -117,35 +133,91 @@
       </div>
     </div>
   </footer>
-  <script>
-    const btn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const burger = document.getElementById('burger');
-    const closeI = document.getElementById('close');
-    btn?.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      burger.classList.toggle('hidden', !isHidden);
-      closeI.classList.toggle('hidden', isHidden);
+ <script>
+  // --- HERO CAROUSEL ---
+  const images = [
+    // You can replace these with your own URLs or /assets/* images
+    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1504691342899-9d7eea6fc381?q=80&w=1200&auto=format&fit=crop"
+  ];
+
+  const slidesEl = document.getElementById('heroSlides');
+  const dotsEl = document.getElementById('heroDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  // Build slides
+  function renderSlides() {
+    slidesEl.innerHTML = images.map(src => `
+      <div class="inline-block align-top w-full">
+        <img src="${src}" alt="Portfolio slide" class="block w-full h-[320px] sm:h-[380px] md:h-[420px] object-cover select-none" loading="lazy"/>
+      </div>
+    `).join('');
+  }
+
+  // Build dots
+  function renderDots() {
+    dotsEl.innerHTML = images.map((_, i) => `
+      <button class="h-2.5 w-2.5 rounded-full border border-white/70 bg-white/50 hover:bg-white ${i===0?'ring-2 ring-sky-300':''}" data-idx="${i}" aria-label="Go to slide ${i+1}"></button>
+    `).join('');
+  }
+
+  let idx = 0;
+  let timer = null;
+  const interval = 3500;
+  const setTransform = () => {
+    slidesEl.style.transform = `translateX(-${idx * 100}%)`;
+    Array.from(dotsEl.children).forEach((d, i) => {
+      d.classList.toggle('ring-2', i === idx);
+      d.classList.toggle('ring-sky-300', i === idx);
     });
-    mobileMenu?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        if (!mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          burger.classList.remove('hidden');
-          closeI.classList.add('hidden');
-        }
-      });
-    });
-    const header = document.getElementById('siteHeader');
-    const addHeaderShadow = () => {
-      if (window.scrollY > 4) header.classList.add('shadow-sm');
-      else header.classList.remove('shadow-sm');
-    };
-    addHeaderShadow();
-    window.addEventListener('scroll', addHeaderShadow, { passive: true });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  };
+
+  function next() { idx = (idx + 1) % images.length; setTransform(); }
+  function prev() { idx = (idx - 1 + images.length) % images.length; setTransform(); }
+
+  function startAuto() { stopAuto(); timer = setInterval(next, interval); }
+  function stopAuto() { if (timer) clearInterval(timer); }
+
+  // Init
+  renderSlides();
+  renderDots();
+  setTransform();
+  startAuto();
+
+  // Buttons
+  nextBtn.addEventListener('click', () => { next(); startAuto(); });
+  prevBtn.addEventListener('click', () => { prev(); startAuto(); });
+
+  // Dots click
+  dotsEl.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-idx]');
+    if (!b) return;
+    idx = parseInt(b.dataset.idx, 10);
+    setTransform();
+    startAuto();
+  });
+
+  // Pause on hover (desktop)
+  slidesEl.parentElement.addEventListener('mouseenter', stopAuto);
+  slidesEl.parentElement.addEventListener('mouseleave', startAuto);
+
+  // Touch swipe (mobile)
+  let startX = null;
+  slidesEl.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  slidesEl.addEventListener('touchmove', (e) => {
+    if (startX === null) return;
+    const dx = e.touches[0].clientX - startX;
+    if (Math.abs(dx) > 50) {
+      dx < 0 ? next() : prev();
+      startX = null;
+      startAuto();
+    }
+  }, { passive: true });
+</script>
 
 </body>
 </html>
