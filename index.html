@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Venu M — Web Developer</title>
+  <meta name="description" content="Venu M — Front-End Web Developer building clean, responsive, modern websites using HTML, CSS, and JavaScript." />
+  <meta name="theme-color" content="#0ea5e9" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Simple fade-in animation */
+    .fade-in { animation: fadeIn 0.6s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }
+  </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50">
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#home" class="flex items-center gap-2 font-semibold text-slate-900">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-sky-500">
+            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 8v13" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Venu M</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#home" class="hover:text-sky-600">Home</a>
+          <a href="#about" class="hover:text-sky-600">About</a>
+          <a href="#skills" class="hover:text-sky-600">Skills</a>
+          <a href="#projects" class="hover:text-sky-600">Projects</a>
+          <a href="#services" class="hover:text-sky-600">Services</a>
+          <a href="#contact" class="hover:text-sky-600">Contact</a>
+        </nav>
+        <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-slate-100" aria-label="Open menu">
+          <svg id="burger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
+      <nav class="px-4 py-3 grid gap-3 text-sm bg-white">
+        <a href="#home" class="py-2">Home</a>
+        <a href="#about" class="py-2">About</a>
+        <a href="#skills" class="py-2">Skills</a>
+        <a href="#projects" class="py-2">Projects</a>
+        <a href="#services" class="py-2">Services</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-sky-50 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-14">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="fade-in">
+          <span class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs text-sky-700">Available for freelance work</span>
+          <h1 class="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">Hi, I’m <span class="text-sky-600">Venu</span> — Web Developer</h1>
+          <p class="mt-4 text-slate-600 leading-relaxed">I build clean, responsive, and fast websites using HTML, CSS, and JavaScript. I focus on modern UI, accessibility, and simple, maintainable code.</p>
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="#projects" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-white font-medium shadow hover:bg-sky-700">View Projects</a>
+            <a href="#contact" class="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-slate-300 hover:bg-slate-100">Contact Me</a>
+            <a href="#" download class="inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium border border-sky-200 text-sky-700 bg-sky-50 hover:bg-sky-100">Download CV</a>
+          </div>
+        </div>
+        <div class="relative fade-in">
+          <div class="mx-auto max-w-sm">
+            <div class="aspect-square rounded-3xl bg-gradient-to-br from-sky-100 via-white to-slate-100 border border-slate-200 shadow-inner flex items-center justify-center">
+              <!-- Simple illustration -->
+              <svg viewBox="0 0 200 200" class="w-3/4" aria-hidden="true">
+                <rect x="30" y="40" width="140" height="100" rx="10" ry="10" fill="#e2e8f0" stroke="#94a3b8"/>
+                <rect x="40" y="50" width="120" height="10" rx="2" fill="#94a3b8"/>
+                <rect x="40" y="70" width="80" height="10" rx="2" fill="#cbd5e1"/>
+                <rect x="40" y="90" width="100" height="10" rx="2" fill="#cbd5e1"/>
+                <rect x="40" y="110" width="60" height="10" rx="2" fill="#cbd5e1"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-10 items-start">
+        <div class="md:col-span-1">
+          <h2 class="text-2xl font-semibold text-slate-900">About Me</h2>
+          <p class="mt-2 text-slate-600">Short intro about your background, approach, and what makes you reliable for clients.</p>
+        </div>
+        <div class="md:col-span-2 space-y-4 text-slate-700 leading-relaxed">
+          <p>I’m a front-end focused developer from India, creating accessible and elegant websites. I value clear communication, fast delivery, and long-term collaboration.</p>
+          <p>I can convert Figma/Adobe XD designs into pixel-perfect pages, build landing pages, and maintain existing sites. I also optimize pages for performance and SEO basics.</p>
+          <ul class="list-disc pl-5">
+            <li>On-time delivery and proactive updates</li>
+            <li>Clean, semantic HTML and modern CSS</li>
+            <li>Lightweight JavaScript with no bloat</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-semibold text-slate-900">Skills</h2>
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center">HTML5</div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center">CSS3</div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center">JavaScript</div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center">Responsive Design</div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center">Bootstrap</div>
+        <div class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-center">Tailwind CSS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-semibold text-slate-900">Featured Projects</h2>
+        <a href="#" class="text-sm text-sky-700 hover:text-sky-900">View all</a>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project Card 1 -->
+        <article class="group rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+          <div class="aspect-video bg-slate-100 grid place-items-center">
+            <svg viewBox="0 0 24 24" class="w-12 h-12 text-slate-400"><path fill="currentColor" d="M3 4h18v2H3V4m0 4h18v2H3V8m0 4h18v2H3v-2m0 4h18v2H3v-2Z"/></svg>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-slate-900">Business Landing Page</h3>
+            <p class="mt-1 text-sm text-slate-600">Clean, mobile-first landing page for a local business with contact CTA.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <a href="#" class="text-sm rounded-lg border px-3 py-1.5 hover:bg-slate-50">Live Demo</a>
+              <a href="#" class="text-sm rounded-lg border px-3 py-1.5 hover:bg-slate-50">Source</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project Card 2 -->
+        <article class="group rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+          <div class="aspect-video bg-slate-100 grid place-items-center">
+            <svg viewBox="0 0 24 24" class="w-12 h-12 text-slate-400"><path fill="currentColor" d="M4 3h16a1 1 0 0 1 1 1v6H3V4a1 1 0 0 1 1-1m-1 9h18v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7Z"/></svg>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-slate-900">Portfolio Template</h3>
+            <p class="mt-1 text-sm text-slate-600">Lightweight personal portfolio with smooth scrolling and sections.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <a href="#" class="text-sm rounded-lg border px-3 py-1.5 hover:bg-slate-50">Live Demo</a>
+              <a href="#" class="text-sm rounded-lg border px-3 py-1.5 hover:bg-slate-50">Source</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project Card 3 -->
+        <article class="group rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+          <div class="aspect-video bg-slate-100 grid place-items-center">
+            <svg viewBox="0 0 24 24" class="w-12 h-12 text-slate-400"><path fill="currentColor" d="M3 6h18v2H3V6m0 4h18v2H3v-2m0 4h18v2H3v-2Z"/></svg>
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-slate-900">Simple Blog Layout</h3>
+            <p class="mt-1 text-sm text-slate-600">SEO-friendly blog structure with readable typography.</p>
+            <div class="mt-4 flex items-center gap-3">
+              <a href="#" class="text-sm rounded-lg border px-3 py-1.5 hover:bg-slate-50">Live Demo</a>
+              <a href="#" class="text-sm rounded-lg border px-3 py-1.5 hover:bg-slate-50">Source</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-semibold text-slate-900">Services</h2>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="font-semibold">Landing Pages</h3>
+          <p class="mt-2 text-sm text-slate-600">High-converting, fast, and responsive landing pages for campaigns or businesses.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="font-semibold">Website Maintenance</h3>
+          <p class="mt-2 text-sm text-slate-600">Fixes, updates, content changes, and performance improvements.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="font-semibold">PSD/Figma to HTML</h3>
+          <p class="mt-2 text-sm text-slate-600">Pixel-perfect conversion from your design files to modern web pages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (optional placeholder) -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-semibold text-slate-900">What clients say</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <blockquote class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm text-sm text-slate-700">“Great communication and fast delivery. The landing page looks fantastic!”<br><span class="text-slate-500 text-xs">— Client Name</span></blockquote>
+        <blockquote class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm text-sm text-slate-700">“Clean code and responsive design. Will hire again.”<br><span class="text-slate-500 text-xs">— Client Name</span></blockquote>
+        <blockquote class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm text-sm text-slate-700">“Understood requirements quickly and delivered on time.”<br><span class="text-slate-500 text-xs">— Client Name</span></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 md:py-24 bg-gradient-to-b from-white to-sky-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-semibold text-slate-900">Let’s work together</h2>
+      <p class="mt-2 text-slate-600">Tell me about your project. I usually reply within a few hours.</p>
+
+      <form id="contactForm" class="mt-8 grid gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="text-sm">Name
+            <input required type="text" name="name" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300" placeholder="Your name" />
+          </label>
+          <label class="text-sm">Email
+            <input required type="email" name="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300" placeholder="you@example.com" />
+          </label>
+        </div>
+        <label class="text-sm">Message
+          <textarea required name="message" rows="5" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300" placeholder="Write a few lines about your project..."></textarea>
+        </label>
+        <div class="flex items-center justify-between gap-4">
+          <button class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-white font-medium shadow hover:bg-sky-700" type="submit">Send Message</button>
+          <a class="text-sky-700 hover:text-sky-900 text-sm" href="mailto:yourmail@example.com">or email: yourmail@example.com</a>
+        </div>
+        <p id="formNote" class="hidden text-sm text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+      <p>© <span id="year"></span> Venu M. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a class="hover:text-slate-900" href="#">GitHub</a>
+        <a class="hover:text-slate-900" href="#">LinkedIn</a>
+        <a class="hover:text-slate-900" href="#">Upwork</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const burger = document.getElementById('burger');
+    const closeI = document.getElementById('close');
+    btn?.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      burger.classList.toggle('hidden', !isHidden);
+      closeI.classList.toggle('hidden', isHidden);
+    });
+
+    // Contact form — open mailto with prefilled body; also show a success note
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+
+      const mail = 'yourmail@example.com'; // TODO: replace with your email
+      const subject = encodeURIComponent('New project inquiry from ' + name);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
+
+      const note = document.getElementById('formNote');
+      note.textContent = 'Thanks! Your email client should open. If not, send to '+ mail + ' directly.';
+      note.classList.remove('hidden');
+      this.reset();
+    });
+
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
