@@ -1,61 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Agency Landing Page — Case Study | Venu M</title>
-  <meta name="description" content="How I built a fast, mobile-first agency landing page with semantic HTML/CSS, WebP images, SEO tags, and a working contact form.">
-  <meta property="og:title" content="Agency Landing Page — Case Study">
-  <meta property="og:description" content="Mobile-first, 90+ Lighthouse score, deployed with working contact form.">
-  <meta property="og:type" content="article">
-  <link rel="icon" href="../assets/favicon.png">
-
-  <style>
-    :root{
-      --fg:#0f172a;--muted:#475569;--bg:#ffffff;--soft:#f1f5f9;--line:#e2e8f0;
-      --brand:#111827;--btn:#111827;--btnfg:#fff;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.55}
-    a{color:inherit}
-    .container{max-width:1100px;margin-inline:auto;padding:0 16px}
-    header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{font-weight:800;letter-spacing:.2px;text-decoration:none}
-    .logo span{color:#2563eb}
-    .menu{display:flex;gap:14px;list-style:none;margin:0;padding:0}
-    .menu a{padding:8px 10px;border-radius:10px;text-decoration:none}
-    .menu a.active,.menu a:hover{background:var(--soft)}
-    .breadcrumbs{font-size:.95rem;color:var(--muted);margin:10px 0 16px}
-    .breadcrumbs span{margin:0 .4rem}
-    main{padding:8px 0 40px}
-    h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:8px 0 6px}
-    h2{font-size:1.2rem;margin:20px 0 8px}
-    p.intro{color:var(--muted);margin:0 0 14px}
-    section{margin:18px 0}
-    ul{padding-left:20px;margin:10px 0}
-    code{background:#0000000d;padding:2px 6px;border-radius:6px}
-    .meta{background:var(--soft);padding:14px;border-radius:12px;border:1px solid var(--line)}
-    .links{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
-    .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid #0000;text-decoration:none;transition:.15s transform}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{background:var(--btn);color:var(--btnfg)}
-    .btn.outline{border-color:var(--line)}
-    .screens{display:grid;grid-template-columns:1fr;gap:14px}
-    .screens figure{margin:0}
-    img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line)}
-    figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
-    .cta-next{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px}
-    .footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:.95rem;margin-top:28px}
-    /* small screen tweaks */
-    @media (min-width:780px){
-      .screens{grid-template-columns:1fr 1fr}
-      .screens figure:nth-child(3){grid-column:1/-1}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Agency Landing Page — Case Study | Venu M</title>
+<meta name="description" content="How I built a fast, mobile-first agency landing page with WebP images, SEO tags, and a working contact form.">
+<meta property="og:title" content="Agency Landing Page — Case Study">
+<meta property="og:description" content="Mobile-first, 90+ Lighthouse score, working lead form.">
+<meta property="og:type" content="article">
+<link rel="icon" href="../assets/favicon.png">
+<style>
+  /* === SCOPE: Only for this page === */
+  .page-case{ --fg:#0f172a;--muted:#475569;--bg:#ffffff;--soft:#f1f5f9;--line:#e2e8f0;--btn:#111827;--btnfg:#fff;}
+  .page-case *{box-sizing:border-box}
+  .page-case{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
+  .page-case a{color:inherit;text-decoration:none}
+  .page-case .container{max-width:1100px;margin-inline:auto;padding:0 16px}
+  .page-case header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+  .page-case .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .page-case .logo{font-weight:800}
+  .page-case .logo span{color:#2563eb}
+  .page-case .menu{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+  .page-case .menu a{padding:8px 10px;border-radius:10px}
+  .page-case .menu a.active,.page-case .menu a:hover{background:var(--soft)}
+  .page-case .breadcrumbs{font-size:.95rem;color:#64748b;margin:10px 0 16px}
+  .page-case .breadcrumbs span{margin:0 .4rem}
+  .page-case main{padding:8px 0 40px}
+  .page-case h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:8px 0 6px}
+  .page-case h2{font-size:1.2rem;margin:20px 0 8px}
+  .page-case p.intro{color:var(--muted);margin:0 0 14px}
+  .page-case section{margin:18px 0}
+  .page-case ul{padding-left:20px;margin:10px 0}
+  .page-case code{background:#0000000d;padding:2px 6px;border-radius:6px}
+  .page-case .meta{background:var(--soft);padding:14px;border-radius:12px;border:1px solid var(--line)}
+  .page-case .links{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+  .page-case .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid transparent;transition:.15s transform}
+  .page-case .btn:hover{transform:translateY(-1px)}
+  .page-case .btn.primary{background:var(--btn);color:var(--btnfg)}
+  .page-case .btn.outline{border-color:var(--line)}
+  .page-case .screens{display:grid;grid-template-columns:1fr;gap:14px}
+  .page-case .screens figure{margin:0}
+  .page-case img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line)}
+  .page-case figcaption{font-size:.92rem;color:var(--muted);margin-top:6px}
+  .page-case .cta-next{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .page-case .footer{border-top:1px solid var(--line);padding:20px 0;color:#64748b;font-size:.95rem;margin-top:28px}
+  @media (min-width:780px){
+    .page-case .screens{grid-template-columns:1fr 1fr}
+    .page-case .screens figure:nth-child(3){grid-column:1/-1}
+  }
+</style>
 </head>
-<body>
+<body class="page-case">
   <header>
     <div class="container nav" role="navigation" aria-label="Main">
       <a href="../index.html" class="logo">Venu<span> M</span></a>
@@ -89,13 +84,13 @@
         <li>Compressed images to <strong>WebP</strong> and enabled <code>loading="lazy"</code></li>
         <li>SEO meta + Open Graph preview for social sharing</li>
         <li>Formspree contact form (GitHub Pages friendly)</li>
-        <li>Deployed to Netlify/GitHub Pages for quick global delivery</li>
+        <li>Deployed to Netlify/GitHub Pages for quick delivery</li>
       </ul>
     </section>
 
     <section aria-labelledby="result">
       <h2 id="result">Result</h2>
-      <p><strong>90+ Lighthouse score</strong>, LCP ~2.5s on mobile, and a working lead form. Layout scales from 360px to desktop smoothly.</p>
+      <p><strong>90+ Lighthouse score</strong>, LCP ~2.5s on mobile, and a working lead form. Layout scales smoothly from 360px to desktop.</p>
     </section>
 
     <section class="meta" aria-labelledby="stack">
@@ -104,7 +99,6 @@
     </section>
 
     <section class="links" aria-label="Project links">
-      <!-- Replace the # with your real links -->
       <a class="btn primary" href="https://your-live-demo-link" target="_blank" rel="noopener">🔗 Live Demo</a>
       <a class="btn outline" href="https://github.com/your-repo" target="_blank" rel="noopener">💻 Source Code</a>
     </section>
@@ -121,14 +115,14 @@
       </figure>
       <figure>
         <img src="../assets/agency-full.webp" alt="Full page preview showing features, pricing and contact" loading="lazy">
-        <figcaption>Full page view</figcaption>
+        <figcaption>Full page view.</figcaption>
       </figure>
     </section>
 
     <section class="cta-next" aria-label="Hire CTA">
       <div>
         <h2 style="margin:0 0 6px">Want something similar?</h2>
-        <p style="margin:0;color:var(--muted)">I can deliver a polished landing page in 2–3 days with clean code and SEO basics.</p>
+        <p style="margin:0;color:#475569">I can deliver a polished landing page in 2–3 days with clean code and SEO basics.</p>
       </div>
       <a class="btn primary" href="../contact.html">Contact Me</a>
     </section>
