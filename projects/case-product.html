@@ -1,1 +1,137 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Product Landing Page — Case Study | Venu M</title>
+<meta name="description" content="Case study of a single-product landing page with gallery, FAQ, and checkout UI mock.">
+<meta property="og:title" content="Product Landing Page — Case Study">
+<meta property="og:description" content="Single product page with fast load, clean gallery, and conversion-focused sections.">
+<meta property="og:image" content="../assets/product-hero.png">
+<link rel="icon" href="../assets/favicon.png">
+<style>
+  /* === SCOPE: Only this page === */
+  .page-case-product{ --fg:#0f172a;--muted:#475569;--bg:#fff;--soft:#f1f5f9;--line:#e2e8f0;--btn:#111827;--btnfg:#fff;}
+  .page-case-product,*{box-sizing:border-box}
+  .page-case-product{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
+  .page-case-product a{color:inherit;text-decoration:none}
+  .page-case-product .container{max-width:1100px;margin-inline:auto;padding:0 16px}
+  .page-case-product header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+  .page-case-product .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .page-case-product .logo{font-weight:800}
+  .page-case-product .logo span{color:#2563eb}
+  .page-case-product .menu{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+  .page-case-product .menu a{padding:8px 10px;border-radius:10px}
+  .page-case-product .menu a.active,.page-case-product .menu a:hover{background:var(--soft)}
+  .page-case-product .breadcrumbs{font-size:.95rem;color:#64748b;margin:10px 0 16px}
+  .page-case-product .breadcrumbs span{margin:0 .4rem}
+  .page-case-product main{padding:8px 0 40px}
+  .page-case-product h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:8px 0 6px}
+  .page-case-product h2{font-size:1.2rem;margin:20px 0 8px}
+  .page-case-product p.intro{color:var(--muted);margin:0 0 14px}
+  .page-case-product section{margin:18px 0}
+  .page-case-product ul{padding-left:20px;margin:10px 0}
+  .page-case-product code{background:#0000000d;padding:2px 6px;border-radius:6px}
+  .page-case-product .meta{background:var(--soft);padding:14px;border-radius:12px;border:1px solid var(--line)}
+  .page-case-product .links{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+  .page-case-product .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid transparent;transition:.15s transform}
+  .page-case-product .btn:hover{transform:translateY(-1px)}
+  .page-case-product .btn.primary{background:var(--btn);color:var(--btnfg)}
+  .page-case-product .btn.outline{border-color:var(--line)}
+  .page-case-product .screens{display:grid;grid-template-columns:1fr;gap:14px}
+  .page-case-product .screens figure{margin:0}
+  .page-case-product img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line)}
+  .page-case-product figcaption{font-size:.92rem;color:#64748b;margin-top:6px}
+  .page-case-product .cta-next{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .page-case-product .footer{border-top:1px solid var(--line);padding:20px 0;color:#64748b;font-size:.95rem;margin-top:28px}
+  @media (min-width:780px){
+    .page-case-product .screens{grid-template-columns:1fr 1fr}
+    .page-case-product .screens figure:nth-child(3){grid-column:1/-1}
+  }
+</style>
+</head>
+<body class="page-case-product">
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main">
+      <a href="../index.html" class="logo">Venu<span> M</span></a>
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="../skills.html">Skills</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="container breadcrumbs">
+    <a href="../projects.html">Projects</a> <span>›</span> <strong>Product Landing Page</strong>
+  </div>
+
+  <main class="container" id="content">
+    <h1>Product Landing Page</h1>
+    <p class="intro">Single-product landing page with clean hero, image gallery, feature highlights, FAQ, and a checkout form mock.</p>
+
+    <section aria-labelledby="pblm">
+      <h2 id="pblm">Problem</h2>
+      <p>Client needed a focused page to explain product value quickly and convert visitors with a simple call-to-action.</p>
+    </section>
+
+    <section aria-labelledby="soln">
+      <h2 id="soln">Solution</h2>
+      <ul>
+        <li>Hero with headline, social proof badges, and primary CTA</li>
+        <li>Responsive image gallery (3–4 product shots) + sticky CTA on mobile</li>
+        <li>Feature list, testimonials, and FAQ accordion (simple JS)</li>
+        <li>Checkout UI mock (form visuals only) for handoff to backend later</li>
+        <li>Optimized PNG screenshots (with <code>loading="lazy"</code>) and SEO/OG basics</li>
+        <li>Deployed on GitHub Pages / Netlify</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="result">
+      <h2 id="result">Result</h2>
+      <p>Clear structure improved the time-on-page and boosted click-through to the CTA section. Lighthouse 90+ (Perf/SEO) on mobile.</p>
+    </section>
+
+    <section class="meta" aria-labelledby="stack">
+      <h2 id="stack">Tech Stack</h2>
+      <p>HTML • CSS • JavaScript • Netlify/GitHub Pages</p>
+    </section>
+
+    <section class="links" aria-label="Project links">
+      <a class="btn primary" href="https://your-product-live-link" target="_blank" rel="noopener">🔗 Live Demo</a>
+      <a class="btn outline" href="https://github.com/your-repo-product" target="_blank" rel="noopener">💻 Source Code</a>
+    </section>
+
+    <section class="screens" aria-labelledby="shots">
+      <h2 id="shots" style="position:absolute;left:-9999px">Screenshots</h2>
+      <figure>
+        <img src="../assets/product-hero.png" alt="Product landing page hero section with CTA" loading="lazy">
+        <figcaption>Hero section with CTA & trust badges.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/product-mobile.png" alt="Product landing page mobile view with sticky CTA" loading="lazy">
+        <figcaption>Mobile layout and sticky CTA.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/product-full.png" alt="Full page preview showing gallery, features, FAQ and checkout mock" loading="lazy">
+        <figcaption>Full page view across sections.</figcaption>
+      </figure>
+    </section>
+
+    <section class="cta-next" aria-label="Hire CTA">
+      <div>
+        <h2 style="margin:0 0 6px">Need a high-converting product page?</h2>
+        <p style="margin:0;color:#475569">I can design and build a clean, fast product page in 2–3 days.</p>
+      </div>
+      <a class="btn primary" href="../contact.html">Contact Me</a>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>© 2025 Venu M • <a href="../contact.html">Hire me</a></p>
+  </footer>
+</body>
+</html>
