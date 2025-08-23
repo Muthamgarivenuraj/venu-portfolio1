@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Projects | Venu M</title>
-  <meta name="description" content="Portfolio projects by Venu M — landing pages, portfolio templates, and product pages built with HTML, CSS, JS, and Tailwind.">
-  <link rel="icon" href="./assets/favicon.png">
-
-  <style>
-    :root{
-      --fg:#0f172a;--muted:#475569;--bg:#ffffff;--soft:#f1f5f9;--line:#e2e8f0;
-      --brand:#111827;--btn:#111827;--btnfg:#fff;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.55}
-    a{text-decoration:none;color:inherit}
-    .container{max-width:1100px;margin-inline:auto;padding:0 16px}
-    header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{font-weight:800;letter-spacing:.2px}
-    .logo span{color:#2563eb}
-    .menu{display:flex;gap:14px;list-style:none;margin:0;padding:0}
-    .menu a{padding:8px 10px;border-radius:10px}
-    .menu a.active,.menu a:hover{background:var(--soft)}
-
-    h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:20px 0}
-    .projects-grid{display:grid;gap:20px}
-    @media(min-width:700px){.projects-grid{grid-template-columns:repeat(2,1fr)}}
-
-    .project-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 6px #0001;display:flex;flex-direction:column}
-    .project-card img{width:100%;height:auto;display:block}
-    .project-card h3{margin:12px 16px 4px}
-    .project-card p{margin:0 16px 14px;color:var(--muted)}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;padding:0 16px 16px}
-    .btn{display:inline-block;padding:8px 14px;border-radius:8px;border:1px solid transparent;transition:.15s transform}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{background:var(--btn);color:var(--btnfg)}
-    .btn.outline{border-color:var(--line)}
-    .btn.secondary{background:#2563eb;color:#fff}
-    .footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:.95rem;margin-top:28px;text-align:center}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Projects | Venu M</title>
+<meta name="description" content="Portfolio projects by Venu M — landing pages, portfolio templates, and product pages.">
+<link rel="icon" href="./assets/favicon.png">
+<style>
+  /* === SCOPE: Only for this page === */
+  .page-projects{ --fg:#0f172a;--muted:#475569;--bg:#ffffff;--soft:#f1f5f9;--line:#e2e8f0;--btn:#111827;--btnfg:#fff; }
+  .page-projects *{box-sizing:border-box}
+  .page-projects{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.55}
+  .page-projects a{text-decoration:none;color:inherit}
+  .page-projects .container{max-width:1100px;margin-inline:auto;padding:0 16px}
+  .page-projects header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+  .page-projects .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .page-projects .logo{font-weight:800;letter-spacing:.2px}
+  .page-projects .logo span{color:#2563eb}
+  .page-projects .menu{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+  .page-projects .menu a{padding:8px 10px;border-radius:10px}
+  .page-projects .menu a.active,.page-projects .menu a:hover{background:var(--soft)}
+  .page-projects h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:20px 0}
+  .page-projects .projects-grid{display:grid;gap:20px}
+  @media(min-width:700px){.page-projects .projects-grid{grid-template-columns:repeat(2,1fr)}}
+  .page-projects .project-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 6px #0001;display:flex;flex-direction:column}
+  .page-projects .project-card img{width:100%;height:auto;display:block}
+  .page-projects .project-card h3{margin:12px 16px 4px}
+  .page-projects .project-card p{margin:0 16px 14px;color:var(--muted)}
+  .page-projects .actions{display:flex;gap:10px;flex-wrap:wrap;padding:0 16px 16px}
+  .page-projects .btn{display:inline-block;padding:8px 14px;border-radius:8px;border:1px solid transparent;transition:.15s transform}
+  .page-projects .btn:hover{transform:translateY(-1px)}
+  .page-projects .btn.primary{background:var(--btn);color:var(--btnfg)}
+  .page-projects .btn.outline{border-color:#e2e8f0}
+  .page-projects .btn.secondary{background:#2563eb;color:#fff}
+  .page-projects .footer{border-top:1px solid var(--line);padding:20px 0;color:#64748b;font-size:.95rem;margin-top:28px;text-align:center}
+</style>
 </head>
-<body>
+<body class="page-projects">
   <!-- Header -->
   <header>
     <div class="container nav">
@@ -67,8 +62,8 @@
         <h3>Agency Landing Page</h3>
         <p>Responsive landing page with clean UI, SEO basics, and fast load time.</p>
         <div class="actions">
-          <a href="https://your-live-demo-link" class="btn primary" target="_blank">Live</a>
-          <a href="https://github.com/your-repo" class="btn outline" target="_blank">Code</a>
+          <a href="https://your-live-demo-link" class="btn primary" target="_blank" rel="noopener">Live</a>
+          <a href="https://github.com/your-repo" class="btn outline" target="_blank" rel="noopener">Code</a>
           <a href="./projects/case-agency.html" class="btn secondary">View Case Study</a>
         </div>
       </div>
@@ -77,12 +72,11 @@
       <div class="project-card">
         <img src="./assets/portfolio-preview.webp" alt="Portfolio Template preview" loading="lazy">
         <h3>Portfolio Template</h3>
-        <p>Personal portfolio website template with multiple themes and responsive design.</p>
+        <p>Personal portfolio template with theme switcher & responsive layout.</p>
         <div class="actions">
-          <a href="https://your-live-demo-link" class="btn primary" target="_blank">Live</a>
-          <a href="https://github.com/your-repo" class="btn outline" target="_blank">Code</a>
-          <!-- later add -->
-          <!-- <a href="./projects/case-portfolio.html" class="btn secondary">View Case Study</a> -->
+          <a href="https://your-live-demo-link" class="btn primary" target="_blank" rel="noopener">Live</a>
+          <a href="https://github.com/your-repo" class="btn outline" target="_blank" rel="noopener">Code</a>
+          <!-- add later: <a href="./projects/case-portfolio.html" class="btn secondary">View Case Study</a> -->
         </div>
       </div>
 
@@ -90,12 +84,11 @@
       <div class="project-card">
         <img src="./assets/product-preview.webp" alt="Product Page preview" loading="lazy">
         <h3>Product Landing Page</h3>
-        <p>Single product page with image gallery, FAQ, and checkout form mock.</p>
+        <p>Product page with gallery, FAQ, and checkout form mock.</p>
         <div class="actions">
-          <a href="https://your-live-demo-link" class="btn primary" target="_blank">Live</a>
-          <a href="https://github.com/your-repo" class="btn outline" target="_blank">Code</a>
-          <!-- later add -->
-          <!-- <a href="./projects/case-product.html" class="btn secondary">View Case Study</a> -->
+          <a href="https://your-live-demo-link" class="btn primary" target="_blank" rel="noopener">Live</a>
+          <a href="https://github.com/your-repo" class="btn outline" target="_blank" rel="noopener">Code</a>
+          <!-- add later: <a href="./projects/case-product.html" class="btn secondary">View Case Study</a> -->
         </div>
       </div>
 
