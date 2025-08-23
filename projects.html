@@ -1,163 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Venu M — Projects</title>
-  <meta name="description" content="Venu M — Front-End Web Developer building clean, responsive, modern websites using HTML, CSS, and JavaScript." />
-  <meta name="theme-color" content="#0ea5e9" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {{
-      theme: {{
-        extend: {{
-          fontFamily: {{
-            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "sans-serif"],
-          }},
-        }},
-      }},
-    }};
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects | Venu M</title>
+  <meta name="description" content="Portfolio projects by Venu M — landing pages, portfolio templates, and product pages built with HTML, CSS, JS, and Tailwind.">
+  <link rel="icon" href="./assets/favicon.png">
+
   <style>
-    html {{ scroll-behavior: smooth; }}
-    .fade-in {{ animation: fadeIn 0.6s ease both; }}
-    @keyframes fadeIn {{ from {{ opacity: 0; transform: translateY(8px); }} to {{ opacity: 1; transform: translateY(0); }} }}
-    .nav-link {{ position: relative; }}
-    .nav-link.active {{ color: rgb(2 132 199); font-weight: 600; }}
-    .nav-link.active::after {{ content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: rgb(56 189 248); border-radius: 2px; }}
+    :root{
+      --fg:#0f172a;--muted:#475569;--bg:#ffffff;--soft:#f1f5f9;--line:#e2e8f0;
+      --brand:#111827;--btn:#111827;--btnfg:#fff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.55}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1100px;margin-inline:auto;padding:0 16px}
+    header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{font-weight:800;letter-spacing:.2px}
+    .logo span{color:#2563eb}
+    .menu{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+    .menu a{padding:8px 10px;border-radius:10px}
+    .menu a.active,.menu a:hover{background:var(--soft)}
+
+    h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:20px 0}
+    .projects-grid{display:grid;gap:20px}
+    @media(min-width:700px){.projects-grid{grid-template-columns:repeat(2,1fr)}}
+
+    .project-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 6px #0001;display:flex;flex-direction:column}
+    .project-card img{width:100%;height:auto;display:block}
+    .project-card h3{margin:12px 16px 4px}
+    .project-card p{margin:0 16px 14px;color:var(--muted)}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;padding:0 16px 16px}
+    .btn{display:inline-block;padding:8px 14px;border-radius:8px;border:1px solid transparent;transition:.15s transform}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:var(--btn);color:var(--btnfg)}
+    .btn.outline{border-color:var(--line)}
+    .btn.secondary{background:#2563eb;color:#fff}
+    .footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:.95rem;margin-top:28px;text-align:center}
   </style>
-
 </head>
-<body class="font-sans text-slate-800 bg-slate-50">
-
-  <header id="siteHeader" class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200 transition-shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <a href="index.html#home" class="flex items-center gap-2 font-semibold text-slate-900">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-sky-500">
-            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M12 8v13" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-          <span>Venu M</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="index.html" class="nav-link hover:text-sky-600 ">Home</a>
-          <a href="about.html" class="nav-link hover:text-sky-600 ">About</a>
-          <a href="skills.html" class="nav-link hover:text-sky-600 ">Skills</a>
-          <a href="projects.html" class="nav-link hover:text-sky-600 active">Projects</a>
-          <a href="services.html" class="nav-link hover:text-sky-600 ">Services</a>
-          <a href="contact.html" class="nav-link hover:text-sky-600 ">Contact</a>
-        </nav>
-        <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-slate-100" aria-label="Open menu">
-          <svg id="burger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
-      <nav class="px-4 py-3 grid gap-3 text-sm bg-white">
-        <a href="index.html" class="py-2 nav-link ">Home</a>
-        <a href="about.html" class="py-2 nav-link ">About</a>
-        <a href="skills.html" class="py-2 nav-link ">Skills</a>
-        <a href="projects.html" class="py-2 nav-link active">Projects</a>
-        <a href="services.html" class="py-2 nav-link ">Services</a>
-        <a href="contact.html" class="py-2 nav-link ">Contact</a>
-      </nav>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="./index.html" class="logo">Venu<span> M</span></a>
+      <ul class="menu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./projects.html" class="active">Projects</a></li>
+        <li><a href="./skills.html">Skills</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
     </div>
   </header>
 
+  <!-- Main -->
+  <main class="container">
+    <h1>Projects</h1>
+    <div class="projects-grid">
 
-<section id="projects" class="py-20 bg-slate-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold text-center mb-12">🚀 My Projects</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      
       <!-- Project 1 -->
-      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
-        <img src="assets/projects/portfolio.png" alt="Portfolio Project" class="rounded-lg mb-4 w-full h-40 object-cover">
-        <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
-        <p class="text-slate-600 mb-4">A modern responsive portfolio built with HTML, CSS, JS and Tailwind.</p>
-        <div class="flex gap-3">
-          <a href="#" class="px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700">View Live</a>
-          <a href="#" class="px-4 py-2 border rounded-lg hover:bg-slate-100">Code</a>
+      <div class="project-card">
+        <img src="./assets/agency-hero.webp" alt="Agency Landing Page preview" loading="lazy">
+        <h3>Agency Landing Page</h3>
+        <p>Responsive landing page with clean UI, SEO basics, and fast load time.</p>
+        <div class="actions">
+          <a href="https://your-live-demo-link" class="btn primary" target="_blank">Live</a>
+          <a href="https://github.com/your-repo" class="btn outline" target="_blank">Code</a>
+          <a href="./projects/case-agency.html" class="btn secondary">View Case Study</a>
         </div>
       </div>
 
       <!-- Project 2 -->
-      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
-        <img src="assets/projects/ecommerce.png" alt="E-commerce Project" class="rounded-lg mb-4 w-full h-40 object-cover">
-        <h3 class="text-xl font-semibold mb-2">E-Commerce Store</h3>
-        <p class="text-slate-600 mb-4">A demo online store built with React & Node.js, with cart & checkout.</p>
-        <div class="flex gap-3">
-          <a href="#" class="px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700">View Live</a>
-          <a href="#" class="px-4 py-2 border rounded-lg hover:bg-slate-100">Code</a>
+      <div class="project-card">
+        <img src="./assets/portfolio-preview.webp" alt="Portfolio Template preview" loading="lazy">
+        <h3>Portfolio Template</h3>
+        <p>Personal portfolio website template with multiple themes and responsive design.</p>
+        <div class="actions">
+          <a href="https://your-live-demo-link" class="btn primary" target="_blank">Live</a>
+          <a href="https://github.com/your-repo" class="btn outline" target="_blank">Code</a>
+          <!-- later add -->
+          <!-- <a href="./projects/case-portfolio.html" class="btn secondary">View Case Study</a> -->
         </div>
       </div>
 
       <!-- Project 3 -->
-      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
-        <img src="assets/projects/blog.png" alt="Blog CMS" class="rounded-lg mb-4 w-full h-40 object-cover">
-        <h3 class="text-xl font-semibold mb-2">Blog CMS</h3>
-        <p class="text-slate-600 mb-4">Custom blog system where users can create, edit, and comment on posts.</p>
-        <div class="flex gap-3">
-          <a href="#" class="px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700">View Live</a>
-          <a href="#" class="px-4 py-2 border rounded-lg hover:bg-slate-100">Code</a>
+      <div class="project-card">
+        <img src="./assets/product-preview.webp" alt="Product Page preview" loading="lazy">
+        <h3>Product Landing Page</h3>
+        <p>Single product page with image gallery, FAQ, and checkout form mock.</p>
+        <div class="actions">
+          <a href="https://your-live-demo-link" class="btn primary" target="_blank">Live</a>
+          <a href="https://github.com/your-repo" class="btn outline" target="_blank">Code</a>
+          <!-- later add -->
+          <!-- <a href="./projects/case-product.html" class="btn secondary">View Case Study</a> -->
         </div>
       </div>
 
     </div>
-  </div>
-</section>
+  </main>
 
-
-
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
-      <p>© <span id="year"></span> Venu M. All rights reserved.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-slate-900" href="https://github.com/Muthangarivenuraj" target="_blank" rel="noopener">GitHub</a>
-        <a class="hover:text-slate-900" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="hover:text-slate-900" href="https://www.upwork.com/nx/find-work/best-matches?boostProfile=1" target="_blank" rel="noopener">Upwork</a>
-      </div>
-    </div>
+  <!-- Footer -->
+  <footer class="container footer">
+    <p>© 2025 Venu M • <a href="./contact.html">Hire me</a></p>
   </footer>
-  <script>
-    const btn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const burger = document.getElementById('burger');
-    const closeI = document.getElementById('close');
-    btn?.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      burger.classList.toggle('hidden', !isHidden);
-      closeI.classList.toggle('hidden', isHidden);
-    });
-    mobileMenu?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        if (!mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          burger.classList.remove('hidden');
-          closeI.classList.add('hidden');
-        }
-      });
-    });
-    const header = document.getElementById('siteHeader');
-    const addHeaderShadow = () => {
-      if (window.scrollY > 4) header.classList.add('shadow-sm');
-      else header.classList.remove('shadow-sm');
-    };
-    addHeaderShadow();
-    window.addEventListener('scroll', addHeaderShadow, { passive: true });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
 </body>
 </html>
