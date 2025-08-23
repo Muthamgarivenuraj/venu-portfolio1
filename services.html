@@ -1,148 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Venu M — Services</title>
-  <meta name="description" content="Venu M — Front-End Web Developer building clean, responsive, modern websites using HTML, CSS, and JavaScript." />
-  <meta name="theme-color" content="#0ea5e9" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {{
-      theme: {{
-        extend: {{
-          fontFamily: {{
-            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "sans-serif"],
-          }},
-        }},
-      }},
-    }};
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    html {{ scroll-behavior: smooth; }}
-    .fade-in {{ animation: fadeIn 0.6s ease both; }}
-    @keyframes fadeIn {{ from {{ opacity: 0; transform: translateY(8px); }} to {{ opacity: 1; transform: translateY(0); }} }}
-    .nav-link {{ position: relative; }}
-    .nav-link.active {{ color: rgb(2 132 199); font-weight: 600; }}
-    .nav-link.active::after {{ content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: rgb(56 189 248); border-radius: 2px; }}
-  </style>
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Services | Venu M</title>
+<meta name="description" content="Service packages: Starter, Standard, and Pro — landing pages, multi-page sites, SEO basics, analytics, and support.">
+<link rel="icon" href="./assets/favicon.png">
+<style>
+  /* === SCOPE: only this page === */
+  .page-services{--fg:#0f172a;--muted:#475569;--bg:#fff;--soft:#f8fafc;--line:#e2e8f0;--brand:#2563eb}
+  .page-services,*{box-sizing:border-box}
+  .page-services{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.6}
+  .page-services a{text-decoration:none;color:inherit}
+  .page-services .container{max-width:1100px;margin-inline:auto;padding:0 16px}
+  .page-services header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+  .page-services .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .page-services .logo{font-weight:800}.page-services .logo span{color:var(--brand)}
+  .page-services .menu{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+  .page-services .menu a{padding:8px 10px;border-radius:10px}
+  .page-services .menu a.active,.page-services .menu a:hover{background:var(--soft)}
+  .page-services main{padding:32px 0 50px}
+  .page-services h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:10px 0 6px}
+  .page-services p.lead{color:var(--muted);margin:0 0 18px}
+  .grid{display:grid;gap:18px}
+  @media(min-width:860px){.grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 2px 6px #0001;display:flex;flex-direction:column}
+  .price{font-size:1.35rem;font-weight:800;margin:4px 0 12px}
+  .pill{display:inline-block;background:#e0e7ff;color:#1e40af;border:1px solid #c7d2fe;border-radius:999px;padding:4px 10px;font-size:.85rem;margin-bottom:8px}
+  ul.features{list-style:none;padding:0;margin:0 0 14px}
+  ul.features li{padding:8px 0;border-bottom:1px dashed var(--line)}
+  .btn{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid #111827;background:#111827;color:#fff;text-align:center}
+  .btn.ghost{background:#fff;color:#111827;border-color:#e2e8f0}
+  .note{font-size:.92rem;color:#64748b;margin-top:8px}
+  footer{border-top:1px solid var(--line);padding:20px 0;text-align:center;color:#64748b;font-size:.95rem;margin-top:32px}
+</style>
 </head>
-<body class="font-sans text-slate-800 bg-slate-50">
-
-  <header id="siteHeader" class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200 transition-shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <a href="index.html#home" class="flex items-center gap-2 font-semibold text-slate-900">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-sky-500">
-            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M12 8v13" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-          <span>Venu M</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="index.html" class="nav-link hover:text-sky-600 ">Home</a>
-          <a href="about.html" class="nav-link hover:text-sky-600 ">About</a>
-          <a href="skills.html" class="nav-link hover:text-sky-600 ">Skills</a>
-          <a href="projects.html" class="nav-link hover:text-sky-600 ">Projects</a>
-          <a href="services.html" class="nav-link hover:text-sky-600 active">Services</a>
-          <a href="contact.html" class="nav-link hover:text-sky-600 ">Contact</a>
-        </nav>
-        <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-slate-100" aria-label="Open menu">
-          <svg id="burger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
-      <nav class="px-4 py-3 grid gap-3 text-sm bg-white">
-        <a href="index.html" class="py-2 nav-link ">Home</a>
-        <a href="about.html" class="py-2 nav-link ">About</a>
-        <a href="skills.html" class="py-2 nav-link ">Skills</a>
-        <a href="projects.html" class="py-2 nav-link ">Projects</a>
-        <a href="services.html" class="py-2 nav-link active">Services</a>
-        <a href="contact.html" class="py-2 nav-link ">Contact</a>
-      </nav>
+<body class="page-services">
+  <header>
+    <div class="container nav">
+      <a href="./index.html" class="logo">Venu<span> M</span></a>
+      <ul class="menu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./skills.html">Skills</a></li>
+        <li><a href="./services.html" class="active">Services</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
     </div>
   </header>
 
+  <main class="container">
+    <h1>Services & Packages</h1>
+    <p class="lead">Pick a package to match your scope. Fixed price, clear deliverables, fast turnaround.</p>
 
-  <section id="packages" class="pricing">
-  <h2>Services & Packages</h2>
-  <div class="cards">
-    <article class="card">
-      <h3>Starter</h3>
-      <p>1-page landing, responsive, deploy</p>
-      <strong>$79 / ₹4,999</strong>
-      <ul><li>Mobile-first</li><li>SEO basics</li><li>2 revisions</li></ul>
-      <a href="./contact.html" class="btn">Start Starter</a>
-    </article>
-    <article class="card">
-      <h3>Standard</h3>
-      <p>3–5 pages, contact form, speed pass</p>
-      <strong>$199 / ₹12,999</strong>
-      <ul><li>Formspree form</li><li>90+ Lighthouse</li><li>3 revisions</li></ul>
-      <a href="./contact.html" class="btn">Start Standard</a>
-    </article>
-    <article class="card">
-      <h3>Pro</h3>
-      <p>6–10 pages, blog (static), analytics</p>
-      <strong>$449 / ₹29,999</strong>
-      <ul><li>OG tags & sitemap</li><li>Analytics</li><li>Priority support</li></ul>
-      <a href="./contact.html" class="btn">Start Pro</a>
-    </article>
-  </div>
-</section>
+    <section class="grid cols-3">
+      <!-- Starter -->
+      <article class="card">
+        <span class="pill">Best for quick launches</span>
+        <h2>Starter</h2>
+        <div class="price">$79 / ₹4,999</div>
+        <ul class="features">
+          <li>1-page landing (responsive)</li>
+          <li>SEO basics (title, meta, OG)</li>
+          <li>Deployment (GitHub Pages / Netlify)</li>
+          <li>2 revisions</li>
+        </ul>
+        <a class="btn" href="./contact.html">Start Starter</a>
+        <div class="note">Delivery: 2–3 days</div>
+      </article>
 
+      <!-- Standard -->
+      <article class="card">
+        <span class="pill">Most popular</span>
+        <h2>Standard</h2>
+        <div class="price">$199 / ₹12,999</div>
+        <ul class="features">
+          <li>3–5 pages (Home, About, Services, Projects, Contact)</li>
+          <li>Contact form (Formspree)</li>
+          <li>Speed pass (image optimization, lazy-load)</li>
+          <li>3 revisions</li>
+        </ul>
+        <a class="btn" href="./contact.html">Start Standard</a>
+        <div class="note">Delivery: 5–7 days</div>
+      </article>
 
+      <!-- Pro -->
+      <article class="card">
+        <span class="pill">For growing businesses</span>
+        <h2>Pro</h2>
+        <div class="price">$449 / ₹29,999</div>
+        <ul class="features">
+          <li>6–10 pages + blog (static)</li>
+          <li>Analytics setup</li>
+          <li>Sitemap & robots.txt</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn" href="./contact.html">Start Pro</a>
+        <div class="note">Delivery: 10–14 days</div>
+      </article>
+    </section>
 
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
-      <p>© <span id="year"></span> Venu M. All rights reserved.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-slate-900" href="https://github.com/Muthangarivenuraj" target="_blank" rel="noopener">GitHub</a>
-        <a class="hover:text-slate-900" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="hover:text-slate-900" href="https://www.upwork.com/nx/find-work/best-matches?boostProfile=1" target="_blank" rel="noopener">Upwork</a>
+    <section style="margin-top:26px">
+      <div class="card">
+        <h2>Add-ons</h2>
+        <ul class="features">
+          <li>Logo/brand color suggestions</li>
+          <li>Copy polishing (headlines, CTAs)</li>
+          <li>Page speed audit with fixes</li>
+        </ul>
+        <a class="btn ghost" href="./projects.html">See Work Samples</a>
       </div>
-    </div>
-  </footer>
-  <script>
-    const btn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const burger = document.getElementById('burger');
-    const closeI = document.getElementById('close');
-    btn?.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      burger.classList.toggle('hidden', !isHidden);
-      closeI.classList.toggle('hidden', isHidden);
-    });
-    mobileMenu?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        if (!mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          burger.classList.remove('hidden');
-          closeI.classList.add('hidden');
-        }
-      });
-    });
-    const header = document.getElementById('siteHeader');
-    const addHeaderShadow = () => {
-      if (window.scrollY > 4) header.classList.add('shadow-sm');
-      else header.classList.remove('shadow-sm');
-    };
-    addHeaderShadow();
-    window.addEventListener('scroll', addHeaderShadow, { passive: true });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    </section>
+  </main>
 
+  <footer>
+    <div class="container">© 2025 Venu M • <a href="./contact.html">Hire me</a></div>
+  </footer>
 </body>
 </html>
