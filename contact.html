@@ -1,161 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact | Venu M</title>
+<meta name="description" content="Contact Venu M — Frontend Web Developer for freelance projects and collaborations.">
+<link rel="icon" href="./assets/favicon.png">
+<style>
+  /* === Scoped CSS === */
+  .page-contact{--fg:#0f172a;--muted:#475569;--bg:#fff;--soft:#f8fafc;--line:#e2e8f0;--brand:#2563eb}
+  .page-contact,*{box-sizing:border-box}
+  .page-contact{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.6}
+  .page-contact a{text-decoration:none;color:inherit}
+  .page-contact .container{max-width:800px;margin-inline:auto;padding:0 16px}
+  header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .logo{font-weight:800}.logo span{color:var(--brand)}
+  .menu{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+  .menu a{padding:8px 10px;border-radius:10px}
+  .menu a.active,.menu a:hover{background:var(--soft)}
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Venu M — Contact</title>
-  <meta name="description" content="Venu M — Front-End Web Developer building clean, responsive, modern websites using HTML, CSS, and JavaScript." />
-  <meta name="theme-color" content="#0ea5e9" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {{
-      theme: {{
-        extend: {{
-          fontFamily: {{
-            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "Arial", "sans-serif"],
-          }},
-        }},
-      }},
-    }};
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    html {{ scroll-behavior: smooth; }}
-    .fade-in {{ animation: fadeIn 0.6s ease both; }}
-    @keyframes fadeIn {{ from {{ opacity: 0; transform: translateY(8px); }} to {{ opacity: 1; transform: translateY(0); }} }}
-    .nav-link {{ position: relative; }}
-    .nav-link.active {{ color: rgb(2 132 199); font-weight: 600; }}
-    .nav-link.active::after {{ content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: rgb(56 189 248); border-radius: 2px; }}
-  </style>
+  main{padding:40px 0 60px}
+  h1{font-size:clamp(1.6rem,2.5vw,2.2rem);margin:0 0 12px}
+  p.lead{color:var(--muted);margin:0 0 24px;text-align:center}
 
+  form{display:grid;gap:16px;background:#fff;padding:24px;border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 6px #0001}
+  label{display:flex;flex-direction:column;gap:6px;font-weight:500}
+  input,textarea{padding:12px;border-radius:10px;border:1px solid var(--line);font-size:1rem}
+  textarea{resize:vertical}
+  button{padding:12px 18px;border-radius:10px;border:1px solid #111827;background:#111827;color:#fff;cursor:pointer;font-size:1rem}
+  button:hover{background:#2563eb;border-color:#2563eb}
+  .status{margin-top:10px;font-size:.95rem;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding:20px 0;text-align:center;color:#64748b;font-size:.95rem;margin-top:32px}
+</style>
 </head>
-<body class="font-sans text-slate-800 bg-slate-50">
-
-  <header id="siteHeader" class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200 transition-shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <a href="index.html#home" class="flex items-center gap-2 font-semibold text-slate-900">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-sky-500">
-            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M12 8v13" stroke="currentColor" stroke-width="1.5"/>
-          </svg>
-          <span>Venu M</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="index.html" class="nav-link hover:text-sky-600 ">Home</a>
-          <a href="about.html" class="nav-link hover:text-sky-600 ">About</a>
-          <a href="skills.html" class="nav-link hover:text-sky-600 ">Skills</a>
-          <a href="projects.html" class="nav-link hover:text-sky-600 ">Projects</a>
-          <a href="services.html" class="nav-link hover:text-sky-600 ">Services</a>
-          <a href="contact.html" class="nav-link hover:text-sky-600 active">Contact</a>
-        </nav>
-        <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-slate-100" aria-label="Open menu">
-          <svg id="burger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
-      <nav class="px-4 py-3 grid gap-3 text-sm bg-white">
-        <a href="index.html" class="py-2 nav-link ">Home</a>
-        <a href="about.html" class="py-2 nav-link ">About</a>
-        <a href="skills.html" class="py-2 nav-link ">Skills</a>
-        <a href="projects.html" class="py-2 nav-link ">Projects</a>
-        <a href="services.html" class="py-2 nav-link ">Services</a>
-        <a href="contact.html" class="py-2 nav-link active">Contact</a>
-      </nav>
+<body class="page-contact">
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a href="./index.html" class="logo">Venu<span> M</span></a>
+      <ul class="menu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./skills.html">Skills</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./contact.html" class="active">Contact</a></li>
+      </ul>
     </div>
   </header>
 
+  <!-- Main -->
+  <main class="container">
+    <h1>Contact Me</h1>
+    <p class="lead">Let’s talk about your project. Fill out the form below and I’ll reply within 24 hours.</p>
 
-  <section class="py-16 md:py-24 bg-gradient-to-b from-white to-sky-50">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold text-slate-900">Contact</h1>
-      <p class="mt-2 text-slate-600">Tell me about your project. I usually reply within a few hours.</p>
-      <form id="contactForm" class="mt-8 grid gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div class="grid sm:grid-cols-2 gap-4">
-          <label class="text-sm">Name
-            <input required type="text" name="name" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300" placeholder="Your name" />
-          </label>
-          <label class="text-sm">Email
-            <input required type="email" name="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300" placeholder="you@example.com" />
-          </label>
-        </div>
-        <label class="text-sm">Message
-          <textarea required name="message" rows="5" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-300" placeholder="Write a few lines about your project..."></textarea>
-        </label>
-        <div class="flex items-center justify-between gap-4">
-          <button class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-white font-medium shadow hover:bg-sky-700" type="submit">Send Message</button>
-          <a class="text-sky-700 hover:text-sky-900 text-sm" href="mailto:muthamgarivenu234@gmail.com">or email: muthamgarivenu234@gmail.com</a>
-        </div>
-        <p id="formNote" class="hidden text-sm text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-3 py-2"></p>
-      </form>
-    </div>
-  </section>
-  <script>
-    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = this.name.value.trim();
-      const userEmail = this.email.value.trim();
-      const message = this.message.value.trim();
-      const mail = 'muthamgarivenu234@gmail.com';
-      const subject = encodeURIComponent('New project inquiry from ' + name);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${userEmail}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
-      const note = document.getElementById('formNote');
-      note.textContent = 'Thanks! Your email client should open. If not, send to ' + mail + ' directly.';
-      note.classList.remove('hidden');
-      this.reset();
-    });
-  </script>
+    <form action="https://formspree.io/f/your-form-id" method="POST" id="contact-form">
+      <label>
+        Your Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email Address
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Project Details
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <button type="submit">Send Message</button>
+      <p class="status" id="form-status"></p>
+    </form>
+  </main>
 
-
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
-      <p>© <span id="year"></span> Venu M. All rights reserved.</p>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-slate-900" href="https://github.com/Muthangarivenuraj" target="_blank" rel="noopener">GitHub</a>
-        <a class="hover:text-slate-900" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="hover:text-slate-900" href="https://www.upwork.com/nx/find-work/best-matches?boostProfile=1" target="_blank" rel="noopener">Upwork</a>
-      </div>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">© 2025 Venu M • <a href="./contact.html">Hire me</a></div>
   </footer>
-  <script>
-    const btn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const burger = document.getElementById('burger');
-    const closeI = document.getElementById('close');
-    btn?.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden');
-      burger.classList.toggle('hidden', !isHidden);
-      closeI.classList.toggle('hidden', isHidden);
-    });
-    mobileMenu?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        if (!mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          burger.classList.remove('hidden');
-          closeI.classList.add('hidden');
-        }
-      });
-    });
-    const header = document.getElementById('siteHeader');
-    const addHeaderShadow = () => {
-      if (window.scrollY > 4) header.classList.add('shadow-sm');
-      else header.classList.remove('shadow-sm');
-    };
-    addHeaderShadow();
-    window.addEventListener('scroll', addHeaderShadow, { passive: true });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
+  <!-- Small JS for success/fail message -->
+  <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          status.textContent = "✅ Thanks! I’ll get back to you soon.";
+          form.reset();
+        } else {
+          status.textContent = "❌ Oops! Something went wrong. Please try again.";
+        }
+      } catch (err) {
+        status.textContent = "❌ Error sending. Check connection.";
+      }
+    });
+  </script>
 </body>
 </html>
